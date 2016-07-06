@@ -1,0 +1,16 @@
+// Main vars
+$main-pad: 15px;
+$header-height: 50px;
+
+// Colors
+$main-blue: #5682A3;
+$light-blue: rgba(112, 171, 214, 0.11);
+$light-border: #E9EBED;
+
+// Z-index
+$main-z: 100;
+
+// Mixins
+@mixin transition {
+  transition: all .2s ease;
+}

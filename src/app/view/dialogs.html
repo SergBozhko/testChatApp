@@ -1,0 +1,24 @@
+<div class="block-title">
+  Список диалогов
+</div>
+
+<!--Dialogs list area-->
+<div class="dialogs-list-area">
+  <ul class="dialogs-list">
+    <li ng-repeat="dialog in $ctrl.list">
+      <a ui-sref="dialogs.item({item: dialog.id})" ui-sref-active="active" class="dialog-item">
+        <div class="dialog-ico">
+          <i class="glyphicon glyphicon-envelope"></i>
+        </div>
+        <div class="dialog-inner">
+          <div class="dialog-title">
+            {{dialog.subject}}
+          </div>
+          <div class="dialog-date">
+            {{dialog.created}}
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>

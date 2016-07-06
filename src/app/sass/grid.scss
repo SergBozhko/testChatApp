@@ -1,0 +1,67 @@
+@import
+  "vars",
+  "generals",
+  "animation";
+
+.main-container {
+  position: relative;
+}
+
+.chat-header {
+  position: absolute;
+  top: 0;
+  right: $main-pad;
+  left: $main-pad;
+  height: $header-height;
+  background-color: $main-blue;
+  z-index: $main-z + 50;
+}
+
+.chat-body {
+
+  padding-top: $header-height;
+
+  .row {
+    @extend .min-height;
+  }
+
+}
+
+.dialogs-area, .messages-area {
+  padding: 0;
+}
+
+// Page loader
+.page-loader {
+  position: absolute;
+  top: 25px;
+  right: 0;
+  left: 0;
+  bottom: 50px;
+  background-color: #fff;
+  z-index: $main-z + 50;
+}
+.send-loader {
+  position: relative;
+  display: block;
+  height: 100%;
+  .loading-wheel {
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+    margin-top: -10px;
+  }
+}
+.loading-wheel {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 3px solid $light-border;
+  border-top: 3px solid $main-blue;
+  animation: .4s wheel linear infinite;
+  margin-left: -18px;
+  margin-top: -18px;
+}

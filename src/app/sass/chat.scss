@@ -1,0 +1,193 @@
+@import "vars";
+
+.chat-header {
+  color: #fff;
+}
+
+.dialogs-area {
+  height: 100%;
+  border-right: 2px solid $light-border;
+  overflow-y: auto;
+}
+
+.messages-area {
+  height: 100%;
+  overflow-y: auto;
+}
+
+// Header
+.main-logo {
+  line-height: 50px;
+  font-size: 22px;
+  a {
+    color: #fff !important;
+    text-decoration: none !important;
+    @include transition;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.block-title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  line-height: 25px;
+  text-align: center;
+  color: $main-blue;
+  background-color: $light-border;
+
+  &.light-title {
+    background-color: transparent;
+    padding: 0 20px;
+    height: 25px;
+    border-bottom: 1px solid rgba(233, 235, 237, 0.4);
+  }
+}
+.username-area {
+  float: right;
+  padding: 10px 0;
+
+  .username-name {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  input {
+    border-radius: 0;
+    padding: 2px 15px;
+    border: none;
+    outline-style: none;
+    height: 30px;
+    color: $main-blue !important;
+    font-weight: 700;
+  }
+}
+
+// Dialogs
+.dialogs-area {
+  position: relative;
+  padding-top: 25px !important;
+}
+.dialogs-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    .dialog-item {
+      display: block;
+      padding: 15px 20px;
+      text-decoration: none !important;
+
+      @include transition;
+      &:hover, &.active {
+        background-color: $light-blue;
+      }
+    }
+  }
+  li + li {
+    margin-top: 1px;
+  }
+}
+.dialog-ico {
+  float: left;
+  width: 25px;
+  height: 30px;
+  margin-top: 2px;
+  font-size: 16px;
+}
+.dialog-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: #5A5A5A;
+}
+
+// Messages {
+.messages-area {
+  position: relative;
+  padding-top: 25px !important;
+}
+.messages-container {
+  width: 500px;
+  height: $header-height;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.send-message-area {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: $main-z + 40;
+}
+.messages-list-area {
+  height: calc(100% - 50px);
+  overflow-y: auto;
+}
+.message-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    padding: $main-pad;
+  }
+  li:nth-child(even) {
+    background-color: rgba(233, 235, 237, 0.2);
+  }
+}
+.message-author {
+  color: $main-blue;
+  font-weight: 700;
+}
+.meassage-text {
+  padding-top: 2px;
+}
+
+// Send message
+.send-message {
+  height: 35px;
+}
+.send-input {
+  height: 100% !important;
+  width: 80%;
+  float: left;
+  border: 1px solid transparent;
+  background-color: $light-border;
+  outline-style: none !important;
+  padding: 2px 15px;
+
+  &:hover, &:focus {
+    border: 1px solid $main-blue;
+  }
+}
+.send-btn {
+  float: left;
+  height: 100% !important;
+  line-height: 35px;
+  width: 20%;
+  border: none !important;
+  background-color: $main-blue !important;
+  border-radius: 0;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff !important;
+  font-size: 12px;
+  padding: 2px;
+}
+
+
+.choose-dialog {
+  text-align: center;
+  padding-bottom: 10px;
+  span {
+    color: #9c9c9c;
+    display: inline-block;
+    border-bottom: 4px solid $light-border;
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+
+}

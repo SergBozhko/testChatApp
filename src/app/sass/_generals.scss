@@ -1,0 +1,19 @@
+html, .main-wrapper, .container {
+  @extend .min-height;
+}
+
+body {
+  background-color: #E7EBF0 !important;
+  @extend .min-height;
+}
+
+.min-height {
+  height: 100%;
+}
+
+.chat-body {
+  background-color: #ffffff;
+  height: calc(100% - 20px);
+  margin-bottom:  20px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.17);
+}

@@ -1,0 +1,39 @@
+<div class="page-loader" ng-if="$ctrl.pageLoader">
+  <div class="loading-wheel"></div>
+</div>
+
+<div class="block-title light-title">
+  Последние сообщения
+</div>
+
+<!--Message list-->
+<div class="messages-list-area">
+  <div class="messages-container">
+    <ul class="message-list">
+      <li ng-repeat="message in $ctrl.messList">
+        <div class="message-author">{{message.author}}</div>
+        <div class="meassage-text">
+          {{message.text}}
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!--Send message-->
+<div class="send-message-area">
+  <div class="messages-container">
+    <form name="sendMessage">
+      <div class="send-message">
+        <input type="text" required class="send-input" ng-model="$ctrl.text">
+        <button type="submit" ng-disabled="sendMessage.$invalid || $ctrl.sendLoader" class="btn send-btn"
+                ng-click="$ctrl.send($ctrl.text)">
+          <span class="send-loader" ng-if="$ctrl.sendLoader">
+            <span class="loading-wheel"></span>
+          </span>
+          <span ng-if="!$ctrl.sendLoader">Отправить</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
