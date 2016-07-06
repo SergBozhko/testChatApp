@@ -8,19 +8,20 @@
   angular.module('testChatApp')
     .component('messages', {
       templateUrl: 'app/view/messages.html',
-      controller: ['Author', 'dialogsData', '$stateParams', 'lodash', '$timeout', messagesCtrl],
+      controller: ['Author', 'dialogsData', '$stateParams', 'lodash', '$timeout', '$state', messagesCtrl],
       // get username from main controller
       bindings: {
         username: '<'
       }
     });
 
-  function messagesCtrl(Author, dialogsData, $stateParams, lodash, $timeout) {
+  function messagesCtrl(Author, dialogsData, $stateParams, lodash, $timeout, $state) {
 
     let self = this;
 
     let dialogId = parseInt($stateParams.item),
       dialogVal = lodash.find(dialogsData, {id: dialogId});
+
 
     self.pageLoader = true;
     self.sendLoader = false;
@@ -31,7 +32,11 @@
 
 
     // Get parts
-    self.messList = dialogVal.parts;
+    if(dialogVal === undefined) {
+      $state.go('dialogs');
+    } else {
+      self.messList = dialogVal.parts;
+    }
 
 
     /**
