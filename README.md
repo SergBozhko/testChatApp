@@ -1,4 +1,4 @@
-# testChatApp
+# Тестовое чат-приложение
 
 Download packages:
 ```
